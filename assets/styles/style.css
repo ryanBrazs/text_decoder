@@ -1,0 +1,441 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Global reset for all elements */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+:root {
+    --color-primary: #2E8B57;
+    --color-secondary: #1D1C1C;
+
+    --color-text-main: #1D1C1C;
+    --color-text-alternative: #FFFFFF;
+
+    --color-background-main: #FFFFFF;
+    --color-background-alternative: #ECECEC;
+
+    --color-border: #2E8B57;
+
+    --button-encrypt-background: #2E8B57;
+    --button-decrypt-background: #FFFFFF;
+    --button-encrypt-hover: #227948;
+    --button-decrypt-hover: #ECECEC;
+
+    --color-textarea-border-focus: #1D1C1C;
+
+    --gradient-image-shadow: linear-gradient(180deg, rgba(217, 217, 217, 0) 27.36%, #FFFFFF 100%);
+
+}
+
+/* Setting base font size to 62.5% for easier rem calculations */
+html{
+    font-size: 62.5%;
+}
+
+/* Setting up font, height, and rendering for HTML and body */
+html,
+body {
+    height: 100vh;
+    font-family: "Roboto", sans-serif;
+    text-rendering: optimizelegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Styling for the body */
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-background-alternative);
+    padding: 0 60px;
+    color: var(--color-text-main);
+}
+
+/* Header styles */
+.header{
+    height: 90px;
+    padding: 1.2rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__brand{
+    display: flex;
+    gap: 20px;
+}
+
+.header__brand-logo{
+    height: 3.8rem;
+}
+
+.header__brand-divisor{
+    border-right: 2px solid var(--color-secondary);
+}
+
+.header__brand-name{
+    display: flex;
+    align-items: center;
+    font-size: 2.4rem;
+    font-weight: 600;
+}
+
+.header__figma-logo-wrapper{
+    background-color: var(--color-secondary);
+    line-height: 0;
+    width: 3.8rem;
+    height: 3.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.header__figma-logo{
+    height: 3rem;
+}
+
+/* Main section styles */
+.main{
+    display: flex;
+    gap: 30px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.main__content{
+    width: 100%;
+    flex-grow: 1;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.content__input{
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--color-border);
+    border-radius: 10px;
+    background-color: var(--color-background-main);
+}
+
+.content__input-close{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
+    cursor: pointer;
+    display: none;
+}
+
+.content__input-paste{
+    position: absolute;
+    top: 20px;
+    left: 21px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: var(--color-background-alternative);
+    cursor: pointer;
+    display: none;
+}
+
+.content__textarea{
+    width: 100%;
+    min-height: 300px;
+    font-size: 1.6rem;
+    padding: 20px 45px 20px 20px;
+    background: none;
+    border: none;
+    resize: none;
+    overflow-y: hidden;
+}
+
+
+.content__textarea:focus{
+    outline: none;
+}
+
+.content__input:focus-within {
+    border: 2px solid var(--color-textarea-border-focus);
+}
+
+.content__warning-message{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.content__warning-text{
+    font-size: 1.4rem;
+}
+
+.content__actions{
+    width: 100%;
+    display: flex;
+    gap: 30px;
+}
+
+.content__action-button{
+    width: 100%;
+    height: 50px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    border: 2px solid var(--color-border);
+    border-radius: 10px;
+}
+
+.content__action-button:hover{
+    cursor: pointer;
+}
+
+.content__action-button--encrypt{
+    background-color: var(--button-encrypt-background);
+    color: var(--color-text-alternative);
+}
+
+.content__action-button--encrypt:hover{
+    background-color: var(--button-encrypt-hover);
+}
+
+.content__action-button--decrypt{
+   background-color: var(--button-decrypt-background);
+}
+
+.content__action-button--decrypt:hover{
+   background-color: var(--button-decrypt-hover);
+}
+
+/* Aside section styles */
+.aside{
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid var(--color-border);
+    background-color: var(--color-background-main);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 34.9rem;
+}
+
+/* Custom scrollbar for aside section */
+.aside ::-webkit-scrollbar {
+    width: 10px; 
+}
+
+.aside ::-webkit-scrollbar-track {
+    background: var(--color-background-alternative); 
+    border-radius: 10px;
+}
+
+.aside ::-webkit-scrollbar-thumb {
+    background: var(--color-primary); 
+    border-radius: 10px; 
+}
+
+.aside__response{
+    font-size: 1.6rem;
+    word-wrap: break-word;
+    margin-bottom: 20px;
+    height: 316px;
+    overflow-y: auto;
+    display: none;
+    width: 30.9rem;
+}
+
+.aside__message{
+    width: 30.5rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.aside__message-image{
+    position: relative;
+    width: fit-content;
+    display: inline;
+}
+
+
+.aside__message-image::before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 13rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: var(--gradient-image-shadow);
+}
+
+
+.aside__message-text {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    margin-top: 30px;
+}
+
+.aside__message-instruction {
+    font-size: 1.6rem;
+}
+
+.aside__copy-button{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-alternative);
+    font-size: 1.8rem;
+    font-weight: 600;
+    border: 2px solid var(--color-border);
+    background-color: var(--color-primary);
+    opacity: 0.5;
+    border-radius: 8px;
+    margin-top: auto;
+}
+
+/* Footer styles */
+.footer{
+    width: 100%;
+    padding: 1.2rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--color-secondary);
+    margin-top: auto;
+}
+
+.footer__text{
+    font-size: 1.4rem;
+} 
+
+.footer__social-media{
+    display: flex;
+    gap: 20px;
+}
+
+.footer__social-media ion-icon{
+    color: var(--color-text-main);
+    font-size: 2rem;
+}
+
+.footer__social-media ion-icon:hover{
+    color: var(--color-primary);
+}
+
+/* Media queries for responsive design */
+@media screen and (max-width: 900px) {
+    .main {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .main__content {
+        gap: 15px;
+    }
+
+    .content__textarea {
+        min-height: 150px;
+    }
+
+    .content__actions { 
+        width: 100%;
+        display: flex;
+        gap: 15px;
+    }
+
+    .aside {
+        width: 100%;
+    }
+
+    .aside__message {
+        margin-bottom: 5px;
+    }
+
+    .aside__response {
+        height: auto;
+    }
+
+    .aside__message-image::before {
+        height: 5rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        padding: 0 30px;
+    }
+
+    .header__brand{
+        gap: 10px;
+    }
+    
+}
+
+@media screen and (max-width: 450px) {
+    body {
+        padding: 0 15px;
+    }
+
+    .content__input-close{
+        top: 10px;
+        right: 10px;
+    }
+
+    .content__input-paste{
+        top: 10px;
+        left: 11px;
+    }
+
+    .content__textarea{
+        padding: 10px 35px 10px 10px;
+    }
+
+    .content__warning-message{
+        gap: 5px;
+        margin-top: 5px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
+
+    .content__actions {
+        flex-direction: column;
+    }
+
+    .aside {
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .aside__message {
+        width: 100%;
+    }
+    
+    .aside__message-image {
+        display: none;
+    }
+
+    .aside__message-text {
+        margin-top: 0;
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}

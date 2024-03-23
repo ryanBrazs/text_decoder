@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <title>Decodificador de texto</title>
+</head>
+<body>
+    
+    <header class="header">
+        <div class="header__brand">
+            <img src="./assets/images/alura-logo.png" alt="Logo da Alura" class="header__brand-logo">
+            <span class="header__brand-divisor"></span>
+            <p class="header__brand-name">Oracle Next Education</p>
+        </div>
+        <a href="https://www.figma.com/file/tL3SICWEM3825mjVsiFjpT/Alura-Challenge---Desafio-1?type=design&node-id=0%3A1&mode=dev&t=X216FnOYy4dZR243-1" class="header__figma-logo-wrapper">
+            <img class="header__figma-logo" src="./assets/images/figma-icon.png" alt="Logo do Figma">
+        </a>
+    </header>
+
+    <main class="main">
+        <section class="main__content">
+            <div class="content__input">
+                <span class="content__input-close material-symbols-outlined">close</span>
+                <span class="content__input-paste material-symbols-outlined">content_paste</span>
+                <textarea class="content__textarea" placeholder="Digite seu texto"></textarea>
+                <div class="content__warning-message">
+                    <ion-icon name="alert-circle-sharp"></ion-icon>
+                    <p class="content__warning-text">Apenas letras minúsculas e sem acento.</p>
+                </div>
+            </div>
+            <div class="content__actions">
+                <button class="content__action-button content__action-button--encrypt">Criptografar</button>
+                <button class="content__action-button content__action-button--decrypt">Descriptografar</button>
+            </div>
+        </section>
+        <aside class="aside">
+            <p class="aside__response"></p>
+            <div class="aside__message">
+                <div class="aside__message-image">
+                    <img src="./assets/images/looking-sideways.png" alt="" class="" width="200px">
+                </div>
+                
+                <p class="aside__message-text">Nenhuma mensagem encontrada</p>
+                <p class="aside__message-instruction">Digite um texto que você deseja criptografar ou descriptografar.</p>
+            </div>
+            <button class="aside__copy-button" disabled>
+                <span class="material-symbols-outlined">content_copy</span>
+                Copiar
+            </button>
+        </aside>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__text">
+            <p>Developed by Ryan Braz</p>
+        </div>
+        <div class="footer__social-media">
+            <a href="https://github.com/ryanbrazs"><ion-icon name="logo-github" class="social-media__icon"></ion-icon></a>
+            <a href="https://www.linkedin.com/in/ryan-braz-341240203"><ion-icon name="logo-linkedin" class="social-media__icon"></ion-icon></a>
+            <a href="https://www.instagram.com/ryanbrazz/"><ion-icon name="logo-instagram" class="social-media__icon"></ion-icon></a>
+        </div>
+    </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
